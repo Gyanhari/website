@@ -1,6 +1,7 @@
 ## This is a project I made to implement my knowledge of nextjs
 
 - I plan to first make a frontend and then later join the backend.
+- Might Deploy It in netlify
 
 ### Routes in the project
 
