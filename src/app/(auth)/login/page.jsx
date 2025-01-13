@@ -7,11 +7,12 @@ import { toast } from "react-toastify";
 export default function Login() {
   const [loginMethod, setLoginMethod] = useState("password");
   const [passwdHidden, setPassHidden] = useState(true);
+  const [validEmailNotificationShown, setValidEmailNotificationShown] =
+    useState(false);
   const [inputForm, setInputForm] = useState({
     email: "",
     password: "",
   });
-  const [validEmail, setValidEmail] = useState(false);
   const validateEmail = (email) => {
     const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return regex.test(email);
@@ -25,16 +26,30 @@ export default function Login() {
     const { name, value } = e.target;
 
     setInputForm((prevData) => ({ ...prevData, [name]: value }));
+    if (name === "email") {
+      setValidEmailNotificationShown(true);
+    }
   };
   const handleLogin = () => {
     if (!inputForm.email || !inputForm.password) {
+      toast.dismiss();
       toast.error("Please enter both email and password", {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
         closeOnClick: true,
-        pauseOnHover: true,
+        pauseOnHover: false,
         draggable: true,
+      });
+      return;
+    }
+    if (!validateEmail(inputForm.email)) {
+      toast.dismiss();
+      toast.error("Enter Valid Email", {
+        position: "top-right",
+        autoClose: 5000,
+        closeOnClick: true,
+        pauseOnHover: false,
       });
       return;
     }
@@ -62,11 +77,12 @@ export default function Login() {
                 name="email"
                 placeholder="Please Enter Phone Number or Email"
               />
-              {validateEmail(inputForm.email) ? (
-                <div></div>
-              ) : (
-                <div>Please Enter Valid Email</div>
-              )}
+
+              <div>
+                {!validateEmail(inputForm.email) && validEmailNotificationShown
+                  ? "Input Valid Email"
+                  : ""}
+              </div>
             </div>
             <div className="relative">
               <input
@@ -108,17 +124,33 @@ export default function Login() {
             </button>
           </div>
           <div className="text-center">
-            Dont have an account?
+            <span className="mr-3">Dont have an account?</span>
             <Link className="text-blue-500 " href="/register">
               Sign up
             </Link>
           </div>
         </div>
-        <div>
+        <div className="flex flex-col items-center justify-center gap-6">
           <div>Or, login with</div>
-          <div>
-            <div>Google</div>
-            <div>Facebook</div>
+          <div className="flex gap-20">
+            <div className="flex gap-2">
+              <Image
+                src="/Images/google.svg"
+                width={20}
+                height={20}
+                alt="Google_Logo"
+              />
+              <span>Google</span>
+            </div>
+            <div className="flex gap-2">
+              <Image
+                src="/Images/facebook.svg"
+                width={20}
+                height={20}
+                alt="Google_Logo"
+              />
+              <span>Facebook</span>
+            </div>
           </div>
         </div>
       </div>

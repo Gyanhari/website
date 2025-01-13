@@ -1,10 +1,11 @@
 import Link from "next/link";
+import SearchBar from "./SearchBar";
 export default function Header() {
   return (
     <>
-      <header className="z-20">
-        <nav className="flex justify-end">
-          <ul className="flex flex-row gap-20">
+      <header style={{ backgroundColor: "#f85606" }} className="flex flex-col">
+        <nav style={{ justifyContent: "flex-end" }} className="flex ">
+          <ul className="flex flex-row gap-20 ">
             <li>
               <Link href="/">Home</Link>
             </li>
@@ -19,6 +20,15 @@ export default function Header() {
             </li>
           </ul>
         </nav>
+        <section>
+          <div className="flex justify-between items-center">
+            <div className="flex-shrink-0">Logo</div>
+            <div className="flex-grow">
+              <SearchBar />
+            </div>
+            <div className="flex-shrink-0">Cart</div>
+          </div>
+        </section>
       </header>
     </>
   );
