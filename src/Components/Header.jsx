@@ -1,6 +1,13 @@
 import Link from "next/link";
 import SearchBar from "./SearchBar";
 export default function Header() {
+  const searchBarContainer = {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    width: "100%",
+    gap: "20px",
+  };
   return (
     <>
       <header style={{ backgroundColor: "#f85606" }} className="flex flex-col">
@@ -20,9 +27,9 @@ export default function Header() {
             </li>
           </ul>
         </nav>
-        <section>
-          <div className="flex justify-between items-center">
-            <div className="flex-shrink-0">Logo</div>
+        <section className="w-screen">
+          <div style={searchBarContainer}>
+            <div className="flex-shrink-0 ml-10">Logo</div>
             <div className="flex-grow">
               <SearchBar />
             </div>

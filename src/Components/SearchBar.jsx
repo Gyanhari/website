@@ -6,7 +6,7 @@ export default function SearchBar() {
       <form action="">
         <div className="relative">
           <input
-            className="w-[1000px] h-[40px] pl-[10px] rounded-[13px] "
+            className="w-[100%] h-[40px] pl-[10px] rounded-[13px] "
             type="text"
             placeholder="Seatch in website"
           />

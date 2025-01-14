@@ -20,4 +20,4 @@ In this section I will write all the progress I have made till now
 #### Goals for Today
 
 - [x] Complete the login Page.
-- [ ] Complete the Header Component. (Will Complete Tomorrow, as this is exam week, I will now study for exam)
+- [ ] Complete the Header Component. (Will Complete After Exam, as this is exam week, I will now study for exam)
