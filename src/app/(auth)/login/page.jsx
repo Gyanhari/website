@@ -67,8 +67,11 @@ export default function Login() {
   return (
     <>
       {loginMethod === "password" ? (
-        <div id="passwd-login">
-          <div className="flex absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex-col gap-3 min-h-56 bg-red-400 m-auto p-10 w-[500]">
+        <div
+          id="passwd-login"
+          className=" w-[100%] h-[100%] flex items-center justify-center"
+        >
+          <div className="flex  flex-col gap-3 min-h-56 bg-red-400 m-auto p-10 w-[500]">
             <div className="flex gap-2 w-auto justify-center cursor-pointer">
               <div>
                 <b>Email</b>
@@ -168,8 +171,11 @@ export default function Login() {
           </div>
         </div>
       ) : (
-        <div id="phone-login">
-          <div className="flex absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex-col gap-3 min-h-56 bg-red-400 m-auto p-10 w-[500]">
+        <div
+          id="phone-login"
+          className=" w-[100%] h-[100%] flex items-center justify-center"
+        >
+          <div className="flex flex-col gap-3 min-h-56 bg-red-400 m-auto p-10 w-[500]">
             <div className="flex gap-2 w-auto justify-center cursor-pointer">
               <div onClick={handleLoginMethod}>Email</div>
               <div className="border-black border-[1px]"></div>

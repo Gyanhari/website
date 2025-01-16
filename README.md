@@ -17,8 +17,11 @@ In this section I will write all the progress I have made till now
 2. I have made the skeleton of the header and the login page
 3. I have been styling and polishing the login page.
 4. Login Page is now watchable and I have implemented some basic function in the login page to detect valid email, show and hide password etc
+5. Header Component Finished
 
-#### Goals for Today
+#### Goals for Project
 
-- [x] Complete the login Page.
+- [x] Complete the Login Page.
 - [x] Complete the Header Component.
+- [ ] Complete the Register Page
+- [ ] Complete the Footer Component
